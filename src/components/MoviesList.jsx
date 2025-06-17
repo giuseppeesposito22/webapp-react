@@ -1,4 +1,4 @@
-import Card from "./Card";
+import MoviesCard from "./MoviesCard";
 
 const movies = [
   {
@@ -48,7 +48,7 @@ export default function MoviesList() {
     <div className="container my-5">
       <div className="row row-cols-3 g-3">
         {movies.map((movie) => (
-          <Card key={movie.id} movie={movie} />
+          <MoviesCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>
