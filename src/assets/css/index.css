@@ -1,0 +1,30 @@
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.review-card {
+  display: grid;
+  display: flex;
+  justify-content: space-between;
+  grid-template-rows: auto auto auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.user-review {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(209, 208, 208);
+  color: black;
+  text-align: center;
+  line-height: 40px;
+}
