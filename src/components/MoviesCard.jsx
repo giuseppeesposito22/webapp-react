@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MoviesCard({ movie }) {
   return (
     <>
@@ -13,9 +15,9 @@ export default function MoviesCard({ movie }) {
               <br />
               <span>{movie.release_year}</span>
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to={`/movies/${movie.id}`} className="btn btn-primary">
+              Dettaglio film
+            </Link>
           </div>
         </div>
       </div>
