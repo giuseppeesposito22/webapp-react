@@ -15,7 +15,7 @@ const movies = [
     director: "Francis Ford Coppola",
     genre: "Crime",
     release_year: 1972,
-    image: "http://localhost:3000/img/movies_cover/interstellar.jpg",
+    image: "http://localhost:3000/img/movies_cover/the_godfather.jpg",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const movies = [
     director: "James Cameron",
     genre: "Romance",
     release_year: 1997,
-    image: "http://localhost:3000/img/movies_cover/matrix.jpg",
+    image: "http://localhost:3000/img/movies_cover/titanic.jpg",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const movies = [
     director: "The Wachowskis",
     genre: "Action",
     release_year: 1999,
-    image: "http://localhost:3000/img/movies_cover/the_godfather.jpg",
+    image: "http://localhost:3000/img/movies_cover/matrix.jpg",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const movies = [
     director: "Christopher Nolan",
     genre: "Science Fiction",
     release_year: 2014,
-    image: "http://localhost:3000/img/movies_cover/titanic.jpg",
+    image: "http://localhost:3000/img/movies_cover/interstellar.jpg",
   },
 ];
 
