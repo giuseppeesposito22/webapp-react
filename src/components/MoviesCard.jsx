@@ -4,7 +4,7 @@ export default function MoviesCard({ movie }) {
   return (
     <>
       <div className="col">
-        <div className="card">
+        <div className="card h-100">
           <img src={movie.image} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{movie.title}</h5>
