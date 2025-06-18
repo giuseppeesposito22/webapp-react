@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ReviewsList from "../components/ReviewsList";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLoader } from "../contexts/LoaderContext";
 
 export default function MoviesDetailPage() {
   const { id } = useParams();
@@ -10,10 +11,13 @@ export default function MoviesDetailPage() {
 
   const [movie, setMovie] = useState();
 
+  const { setIsLoading } = useLoader();
+
   const fecthMovie = () => {
+    setIsLoading(true);
     axios.get(apiUrl).then((res) => {
       setMovie(res.data.data);
-      console.log(res.data.data);
+      setIsLoading(false);
     });
   };
 
@@ -22,7 +26,7 @@ export default function MoviesDetailPage() {
   return (
     <>
       <h1>Dettaglio film {id}</h1>
-      {movie ? (
+      {movie && (
         <div className="container">
           <div className="row">
             <div className="col-5">
@@ -42,8 +46,6 @@ export default function MoviesDetailPage() {
 
           <ReviewsList reviews={movie.reviews} />
         </div>
-      ) : (
-        <h1>Loading...</h1>
       )}
     </>
   );
