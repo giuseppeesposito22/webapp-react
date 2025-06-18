@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import MoviesCard from "./MoviesCard";
 import axios from "axios";
+import { useLoader } from "../contexts/LoaderContext";
 
 const apiUrl = import.meta.env.VITE_API_URL + "/movies";
 
 export default function MoviesList() {
   const [movies, setMovies] = useState([]);
-  const [isLoad, setIsLoad] = useState(false);
+  const { setIsLoading } = useLoader();
 
   const fetchMovies = () => {
+    setIsLoading(true);
     axios.get(apiUrl).then((res) => {
       setMovies(res.data.data);
-      console.log(res.data.data);
-      setIsLoad(true);
+      setIsLoading(false);
     });
   };
 
@@ -20,7 +21,7 @@ export default function MoviesList() {
 
   return (
     <>
-      {isLoad ? (
+      {movies && (
         <div className="container my-5">
           <div className="row row-cols-3 g-3">
             {movies.map((movie) => (
@@ -28,8 +29,6 @@ export default function MoviesList() {
             ))}
           </div>
         </div>
-      ) : (
-        <h1>Loading...</h1>
       )}
     </>
   );
