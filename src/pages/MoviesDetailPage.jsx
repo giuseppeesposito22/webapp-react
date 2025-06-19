@@ -3,6 +3,7 @@ import ReviewsList from "../components/ReviewsList";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLoader } from "../contexts/LoaderContext";
+import ReviewForm from "../components/ReviewForm";
 
 export default function MoviesDetailPage() {
   const { id } = useParams();
@@ -45,6 +46,8 @@ export default function MoviesDetailPage() {
           <section className="my-5">{movie.abstract}</section>
 
           <ReviewsList reviews={movie.reviews} />
+
+          <ReviewForm idMovie={id} />
         </div>
       )}
     </>

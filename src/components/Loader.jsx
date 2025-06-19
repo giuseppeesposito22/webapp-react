@@ -1,6 +1,4 @@
 export default function Loader({ show }) {
-  console.log("LOADER STATUS", show);
-
   if (!show) return <></>;
 
   return (
