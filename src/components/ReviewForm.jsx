@@ -1,26 +1,15 @@
-import { useState } from "react";
-
-const initialFormData = {
-  name: "",
-  vote: 0,
-  text: "",
-};
-
-export default function ReviewForm({ idMovie }) {
-  const [formData, setFormData] = useState(initialFormData);
-
+export default function ReviewForm({
+  formData,
+  setFormData,
+  handleReviewFormSubmit,
+}) {
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setFormData(initialFormData);
-  };
-
   return (
     <>
-      <form className="row my-5" onSubmit={handleFormSubmit}>
+      <form className="row my-5" onSubmit={handleReviewFormSubmit}>
         <div className="col-6">
           <label htmlFor="NameInput" className="form-label">
             Name
